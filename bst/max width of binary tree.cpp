@@ -16,10 +16,8 @@ public:
         return 0;
         int ans = 0;
         queue < pair < TreeNode * , int >> q;
-        q.push({
-            root,
-            0
-        });
+        q.push({root,0});
+        
         while (!q.empty()) {
             int size = q.size();
             int curMin = q.front().second;
