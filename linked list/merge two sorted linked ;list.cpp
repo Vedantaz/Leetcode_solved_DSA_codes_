@@ -18,41 +18,66 @@ public:
         if(head2 == NULL) {
             return head1;
         }
-    while(head1!=NULL && head2!=NULL){
-        
-        if(fh== NULL && ft==NULL){
-            if(head1->val>head2->val){
-                fh=head2;
-                ft=head2;
-                head2=head2->next;
+        while(head1!=NULL && head2!=NULL){
+            
+            if(fh== NULL && ft==NULL){
+                if(head1->val>head2->val){
+                    fh=head2;
+                    ft=head2;
+                    head2=head2->next;
+                }else{
+                    fh=head1;
+                    ft=head1;
+                    head1=head1->next;
+                }
             }else{
-                fh=head1;
-                ft=head1;
+                
+            if(head1->val < head2->val){
+                ft->next=head1;
+                ft=ft->next;
                 head1=head1->next;
+                
+            }else {
+                ft->next=head2;
+                ft=ft->next;
+                head2=head2->next;
+            }   
             }
-        }else{
             
-        if(head1->val < head2->val){
+        }
+    
+        if(head1!=NULL){
             ft->next=head1;
-            ft=ft->next;
-            head1=head1->next;
-            
-        }else {
+        }
+        if(head2!=NULL){
             ft->next=head2;
-            ft=ft->next;
-            head2=head2->next;
-        }   
         }
         
-    }
-    
-    if(head1!=NULL){
-        ft->next=head1;
-    }
-    if(head2!=NULL){
-        ft->next=head2;
-    }
-    
-    return fh;
+        return fh;
     }
 };
+
+ListNode* mergeTwoLists(ListNode* head1, ListNode* head2) {
+
+
+    ListNode* head = new Node(0);
+    ListNode* curr = head;
+
+    while(head1 != NULL && head2 != NULL){
+
+        if(head1->val <= head2->val){
+            curr->next = head1;
+            head1 = head1->next;
+        }
+        else{
+                    curr->next = head2;
+                    head2 = head2->next;
+        }
+        curr = curr->next;
+
+    }
+    if(head1 != NULL ) curr->next = head1;
+    if(head2 != NULL ) curr->next = head2;
+
+    return head->next;
+}
