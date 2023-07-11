@@ -24,5 +24,15 @@ public:
         return c;
 
 
+        vector<pair<char, int>> res;
+
+        for(auto x:s){
+            if(res.empty() && res.top() != x){
+                res.push(x);
+                res.back()
+            }
+
+        }
+
     }
 };

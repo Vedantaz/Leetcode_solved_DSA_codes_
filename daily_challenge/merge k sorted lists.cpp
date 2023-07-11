@@ -13,44 +13,33 @@ public:
 
     void merge(vector<int> &res, int start, int mid, int finish, vector<int> &ans){
         int start1 = start;
-
         int start2 = mid+1;
         int n1 = mid-start+1;
         int n2 = finish-mid;
-
         for(int i=0;i<n1;i++){
             ans[start1+i] = res[start1+i];
         }
         for(int i=0; i<n2;i++){
             ans[start2+i] = res[start2+i];
-
         }
-
         int i=0, j=0, k = start;
         while(i<n1 && j<n2){
             if(ans[start1+i]<= ans[start2 + j]){
                 res[k] = ans[start1+i];
                 i+=1;
-
             }
             else{
                 res[k] = ans[start2+j];
                 j+=1;
-
             }
             k+=1;
-
         }
-
         while(i<n1){
                res[k] = ans[start1+i];
                i++;
                k++;
-
         }
         while(j<n2){
-
-        
                res[k] = ans[start2+ j];
                j++;
                k++;
