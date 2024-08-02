@@ -9,6 +9,7 @@ public:
         stack<int> s;
         for(auto x: tokens){
             if(x == "+" || x == "/" || x == "-" || x == "*"){
+                
                 int r = s.top(); s.pop();
                 int f = s.top(); s.pop();
                 
@@ -18,13 +19,11 @@ public:
 
                 if(x == "-") s.push(f-r);
 
-                if(x == "*") s.push(f*r);
-
-
+                if(x == "*") s.push(f*r); 
 
             }
             else{
-                stringstream ss(x);
+                stringstream ss(x);   // function to change string to integer 
                 int val;
                 ss >> val;
                 s.push(val);
