@@ -13,7 +13,7 @@ public:
         }
         return maxp;
     }
-};
+};  
 
 //most optimal solution 1ms
 class Solution {
