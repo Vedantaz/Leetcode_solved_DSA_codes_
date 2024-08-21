@@ -4,9 +4,9 @@ public:
         unordered_map<int,int> res;
         for(int i=0;i<nums.size();i++){
             int val = target-nums[i];
-            if(res.find(val) != res.end()){
-                return {res[val]+1,i+1};
-            }
+            if(res.find(target-nums[i]) != res.end()){
+                return {res[target-nums[i]],i};
+            }   
             res[nums[i]] = i;
         }
         
