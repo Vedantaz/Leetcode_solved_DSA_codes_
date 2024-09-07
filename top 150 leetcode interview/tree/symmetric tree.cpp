@@ -17,8 +17,7 @@ public:  
 
     bool isSymmetric(TreeNode* root) {
         if (root == nullptr) {
-            return true;   
- // An empty tree is symmetric
+            return true; // An empty tree is symmetric
         }
 
         return isMirror(root->left, root->right);
@@ -27,7 +26,7 @@ public:  
 private:
     bool isMirror(TreeNode* left, TreeNode* right) {
         if (left == nullptr && right == nullptr) {
-            return true;   
+            return true;
  // Both subtrees are null, they are mirrors
         }
 
