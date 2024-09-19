@@ -38,8 +38,6 @@ public:
         root->left = build(inorder, postorder, inStart, inIndex - 1, postIndex, inMap);
 
         return root;
-
-  
     }
 };
 

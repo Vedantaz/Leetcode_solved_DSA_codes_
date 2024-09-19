@@ -54,8 +54,6 @@ public:
 // 3ms
 
 // 0 ms
-
-
 class Solution {
 public:
     Node* connect(Node* root) {
