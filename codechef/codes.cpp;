@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+#include <algorithm>
+
+int main() {
+	// your code goes here
+	int t;
+	
+	cin>>t;
+	while(t--){
+	    int n,x;
+	    
+	    cin>>n>>x;
+	    int a[n];
+	    for(int i=0; i<n;i++){
+	        cin>>a[i];
+	        
+	    }
+	    sort(a, a+n);
+	    
+	    cout<<a[n-x]-1<<endl;
+	    
+	    
+	}
+	return 0;
+}
+
+
+
+# cook your dish here
+
+t = int(input())
+for i in range(t):
+    n, x = map(int, input().split())
+    m = list(map(int , input().split()))
+    p = sorted(n, reverse = True)
+    
+    ans = p[x-1]-1
+    print(ans)
