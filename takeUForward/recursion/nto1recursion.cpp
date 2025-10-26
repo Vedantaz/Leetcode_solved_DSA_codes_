@@ -10,7 +10,7 @@ void printNto1(int N) {
     // Print the current number
     cout << N << endl;
 
-    // Recursive call with N reduced by 1
+    // Recursive call with N reduced by 1           
     printNto1(N - 1);
 }
 int main() {
